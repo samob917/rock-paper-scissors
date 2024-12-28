@@ -24,3 +24,8 @@ function getHumanChoice() {
 }
 let humanChoice = getHumanChoice();
 console.log(humanChoice);
+
+let humanScore = 0;
+let computerScore = 0;
+console.log(humanScore);
+console.log(computerScore);
