@@ -8,7 +8,8 @@ function getComputerChoice() {
         return "Scissors";
     }
 }
-console.log(getComputerChoice())
+let computerChoice = getComputerChoice();
+console.log(computerChoice);
 function getHumanChoice() {
     let humanChoice = prompt("Choose Rock, Paper, or Scissors: ");
     if (humanChoice === "Rock") {
@@ -18,9 +19,8 @@ function getHumanChoice() {
     } else if (humanChoice === "Scissors") {
         return "Scissors";
     } else {
-        getHumanChoice()
+        return getHumanChoice()
     }
-    return humanChoice
 }
-
-console.log(getHumanChoice())
+let humanChoice = getHumanChoice();
+console.log(humanChoice);
