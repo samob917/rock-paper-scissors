@@ -8,8 +8,7 @@ function getComputerChoice() {
         return "scissors";
     }
 }
-let computerChoice = getComputerChoice();
-console.log(computerChoice);
+
 function getHumanChoice() {
     let humanChoice = prompt("Choose Rock, Paper, or Scissors: ").toLowerCase();
     if (humanChoice === "rock") {
@@ -22,8 +21,6 @@ function getHumanChoice() {
         return getHumanChoice()
     }
 }
-let humanChoice = getHumanChoice();
-console.log(humanChoice);
 
 function playRound(computerChoice, humanChoice) {
     if (computerChoice === "rock" && humanChoice === "paper") {
@@ -66,9 +63,5 @@ function playGame() {
 }
 let humanScore = 0;
 let computerScore = 0;
-console.log(humanScore);
-console.log(computerScore);
 
 console.log(playGame())
-console.log(humanScore);
-console.log(computerScore);
