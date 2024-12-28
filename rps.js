@@ -49,11 +49,26 @@ function playRound(computerChoice, humanChoice) {
     };
 }
 
+
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        let humanChoice = getHumanChoice();
+        let computerChoice = getComputerChoice();
+        playRound(computerChoice, humanChoice);
+    }
+    if (computerScore > humanScore) {
+        return `You lost! You won ${humanScore} and lost ${computerScore}`;
+    } else if (humanScore > computerScore) {
+        return `You won! You won ${humanScore} and lost ${computerScore}`;
+    } else {
+        return `Tie! You won ${humanScore} and lost ${computerScore}`
+    }
+}
 let humanScore = 0;
 let computerScore = 0;
 console.log(humanScore);
 console.log(computerScore);
 
-playRound(computerChoice, humanChoice);
+console.log(playGame())
 console.log(humanScore);
 console.log(computerScore);
