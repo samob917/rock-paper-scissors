@@ -22,7 +22,10 @@ function getHumanChoice() {
     }
 }
 
-let outcomeDiv = document.querySelector("div");
+let outcomeDiv = document.querySelector(".outcome");
+outcomeDiv.textContent = "Press any button to start a new game. You will play to 5."
+let humanScore = 0;
+let computerScore = 0;
 
 function playRound(computerChoice, humanChoice) {
     if (computerChoice === "rock" && humanChoice === "paper") {
@@ -46,19 +49,27 @@ function playRound(computerChoice, humanChoice) {
     } else {
         outcomeDiv.textContent = `Tie! Both picked ${computerChoice}`;
     };
+    scoreDiv.textContent = `You: ${humanScore} - Computer: ${computerScore}`;
+
+    if (humanScore === 5) {
+        outcomeDiv.textContent = `You win! ${humanScore} to ${computerScore}. Press any button to play again.`;
+        humanScore = 0;
+        computerScore = 0;
+    } else if (computerScore == 5) {
+        outcomeDiv.textContent = `You lose! ${humanScore} to ${computerScore}. Press any button to play again.`;
+        humanScore = 0;
+        computerScore = 0; 
+    };
 }
 
-
-let humanScore = 0;
-let computerScore = 0;
-
+let scoreDiv = document.querySelector(".score");
+scoreDiv.textContent = "You: 0 - Computer: 0";
 let rockButton = document.createElement("button");
 rockButton.textContent = "Rock";
 let paperButton = document.createElement("button");
 paperButton.textContent = "Paper";
 let scissorsButton = document.createElement("Button");
 scissorsButton.textContent = "Scissors";
-
 
 rockButton.addEventListener("click", () => {
     playRound(getComputerChoice(), "rock");
@@ -74,6 +85,8 @@ let body = document.querySelector("body");
 body.appendChild(rockButton);
 body.appendChild(paperButton);
 body.appendChild(scissorsButton);
+
+
 
 
 
