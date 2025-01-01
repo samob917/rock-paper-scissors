@@ -64,27 +64,17 @@ function playRound(computerChoice, humanChoice) {
 
 let scoreDiv = document.querySelector(".score");
 scoreDiv.textContent = "You: 0 - Computer: 0";
-let rockButton = document.createElement("button");
-rockButton.textContent = "Rock";
-let paperButton = document.createElement("button");
-paperButton.textContent = "Paper";
-let scissorsButton = document.createElement("Button");
-scissorsButton.textContent = "Scissors";
 
-rockButton.addEventListener("click", () => {
-    playRound(getComputerChoice(), "rock");
-});
-paperButton.addEventListener("click", () => {
-    playRound(getComputerChoice(), "paper");
-});
-scissorsButton.addEventListener("click", () => {
-    playRound(getComputerChoice(), "scissors");
-});
+
+let rockButton = document.querySelector("#rock");
+let paperButton = document.querySelector("#paper");
+let scissorsButton = document.querySelector("#scissors");
 
 let body = document.querySelector("body");
-body.appendChild(rockButton);
-body.appendChild(paperButton);
-body.appendChild(scissorsButton);
+body.addEventListener('click', (event) => {
+    let target = event.target;
+    playRound(getComputerChoice(), target.id)
+})
 
 
 
