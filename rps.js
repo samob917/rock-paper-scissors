@@ -47,21 +47,31 @@ function playRound(computerChoice, humanChoice) {
 }
 
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        let humanChoice = getHumanChoice();
-        let computerChoice = getComputerChoice();
-        playRound(computerChoice, humanChoice);
-    }
-    if (computerScore > humanScore) {
-        return `You lost! You won ${humanScore} and lost ${computerScore}`;
-    } else if (humanScore > computerScore) {
-        return `You won! You won ${humanScore} and lost ${computerScore}`;
-    } else {
-        return `Tie! You won ${humanScore} and lost ${computerScore}`
-    }
-}
 let humanScore = 0;
 let computerScore = 0;
 
-console.log(playGame())
+let rockButton = document.createElement("button");
+rockButton.textContent = "Rock";
+let paperButton = document.createElement("button");
+paperButton.textContent = "Paper";
+let scissorsButton = document.createElement("Button");
+scissorsButton.textContent = "Scissors";
+
+
+rockButton.addEventListener("click", () => {
+    playRound(getComputerChoice(), "rock");
+});
+paperButton.addEventListener("click", () => {
+    playRound(getComputerChoice(), "paper");
+});
+scissorsButton.addEventListener("click", () => {
+    playRound(getComputerChoice(), "scissors");
+});
+
+let body = document.querySelector("body");
+body.appendChild(rockButton);
+body.appendChild(paperButton);
+body.appendChild(scissorsButton);
+
+
+
