@@ -22,27 +22,29 @@ function getHumanChoice() {
     }
 }
 
+let outcomeDiv = document.querySelector("div");
+
 function playRound(computerChoice, humanChoice) {
     if (computerChoice === "rock" && humanChoice === "paper") {
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        outcomeDiv.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
         humanScore++;
     } else if (computerChoice === "rock" && humanChoice === "scissors") {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        outcomeDiv.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
         computerScore++;
     } else if (computerChoice === "paper" && humanChoice === "rock") {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        outcomeDiv.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
         computerScore++;
     } else if (computerChoice === "paper" && humanChoice === "scissors") {
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        outcomeDiv.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
         humanScore++;        
     } else if (computerChoice === "scissors" && humanChoice === "rock") {
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        outcomeDiv.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
         humanScore++; 
     } else if (computerChoice === "scissors" && humanChoice === "paper") {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        outcomeDiv.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
         computerScore++;
     } else {
-        console.log(`Tie! Both picked ${computerChoice}`);
+        outcomeDiv.textContent = `Tie! Both picked ${computerChoice}`;
     };
 }
 
